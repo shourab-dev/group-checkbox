@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+</head>
+
+<body>
+
+    <div>
+        <h2>Test Option</h2>
+        <label for="">
+            Check All Test
+            <input type="checkbox" class="group_check" data-group="test">
+        </label> <br><br>
+
+        <label for="">
+            Test 1
+            <input type="checkbox" class="test">
+        </label>
+        <br>
+        <label for="">
+            Test 2
+            <input type="checkbox" class="test">
+        </label>
+        <br>
+        <label for="">
+            Test 3
+            <input type="checkbox" class="test">
+        </label>
+    </div>
+
+    <div>
+        <h2>Box Option</h2>
+        <label for="">
+            Check All Test
+            <input type="checkbox" class="group_check" data-group="box">
+        </label> <br><br>
+
+        <label for="">
+            box 1
+            <input type="checkbox" class="box">
+        </label>
+        <br>
+        <label for="">
+            box 2
+            <input type="checkbox" class="box">
+        </label>
+        <br>
+        <label for="">
+            box 3
+            <input type="checkbox" class="box">
+        </label>
+    </div>
+
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script>
+        let groupInput = $(".group_check");
+
+        groupInput.change(function () {
+
+            groupName = $(this).attr('data-group')
+            let groupCheckBox = $(`.${groupName}`)
+            if($(this).is(":checked")){
+                groupCheckBox.prop('checked', true)
+            } else{
+                groupCheckBox.prop('checked', false)
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>
